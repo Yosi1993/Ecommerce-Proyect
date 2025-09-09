@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Mostrar productos desde API externa",
+    "scope": "global",
+    "code": "add_shortcode('productos_api', function($atts) {\n    // URL de la API externa\n    $api_url = 'https://api.ejemplo.com/productos';\n\n    // Hacemos la solicitud a la API\n    $response = wp_remote_get($api_url);\n\n    if (is_wp_error($response)) {\n        return 'Error al obtener los productos';\n    }\n\n    $body = wp_remote_retrieve_body($response);\n    $productos = json_decode($body, true); // Convertimos JSON a array\n\n    if (!$productos) {\n        return 'No se encontraron productos';\n    }\n\n    // Construimos el HTML\n    $html = '<div class=\"productos-destacados\">';\n    foreach ($productos as $producto) {\n        $html .= '<div class=\"producto\">';\n        $html .= '<a href=\"' . esc_url($producto['url']) . '\">';\n        $html .= '<img src=\"' . esc_url($producto['imagen']) . '\" alt=\"' . esc_attr($producto['nombre']) . '\" />';\n        $html .= '</a>';\n        $html .= '<h3>' . esc_html($producto['nombre']) . '</h3>';\n        $html .= '<span class=\"precio\">' . esc_html($producto['precio']) . '</span>';\n        $html .= '</div>';\n    }\n    $html .= '</div>';\n\n    return $html;\n});",
+    "active": false
+  }
+]
