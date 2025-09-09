@@ -1,14 +1,14 @@
-# WordPress Core
-/wp-admin/
-/wp-includes/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
+# WordPress Core (COMENTADO - para subir todo el proyecto)
+# /wp-admin/
+# /wp-includes/
+# /wp-content/index.php
+# /wp-content/languages
+# /wp-content/plugins/index.php
+# /wp-content/themes/index.php
 
-# WordPress Config
-wp-config.php
-wp-config-sample.php
+# WordPress Config (COMENTADO - para subir archivos de config también)
+# wp-config.php
+# wp-config-sample.php
 
 # Database
 *.sql
@@ -17,11 +17,11 @@ wp-config-sample.php
 # Log files
 *.log
 
-# htaccess
-/.htaccess
+# htaccess (COMENTADO - para incluir .htaccess)
+# /.htaccess
 
-# Uploads
-/wp-content/uploads/
+# Uploads (OPCIONAL - descomenta si no quieres subir archivos subidos)
+# /wp-content/uploads/
 
 # Cache
 /wp-content/cache/
